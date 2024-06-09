@@ -1,0 +1,3 @@
+mode: set
+github.com/marktlinn/goStore/cmd/main.go:5.13,7.2 1 0
+github.com/marktlinn/goStore/p2p/tcp_transport.go:15.55,19.2 1 1
