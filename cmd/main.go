@@ -11,6 +11,7 @@ func main() {
 	tcpOpts := p2p.TCPTransportOptions{
 		ListenAddr:    ":8000",
 		HandshakeFunc: p2p.BypassHandshake,
+		Decoder:       p2p.GOBDecoder{},
 	}
 
 	tr := p2p.NewTCPTransport(tcpOpts)
