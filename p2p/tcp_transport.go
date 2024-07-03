@@ -76,13 +76,15 @@ func (t *TCPTransport) handleTCPConnection(conn net.Conn) {
 		return
 	}
 
-	msg := &struct{}{}
+	msg := &RPC{}
 	for {
 		if err := t.Decoder.Decode(conn, msg); err != nil {
 			log.Printf("failed to decode from TCP %s\n", err)
 			continue
 		}
-	}
 
-	log.Printf("new connection established: %+v\n", conn)
+		msg.From = conn.RemoteAddr()
+		log.Printf("new connection established: %+v\n", conn)
+
+	}
 }

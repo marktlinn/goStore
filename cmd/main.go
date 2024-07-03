@@ -10,8 +10,8 @@ import (
 func main() {
 	tcpOpts := p2p.TCPTransportOptions{
 		ListenAddr:    ":8000",
-		HandshakeFunc: p2p.BypassHandshake,
-		Decoder:       p2p.GOBDecoder{},
+		HandshakeFunc: p2p.BypassHandshakeFunc,
+		Decoder:       p2p.DefaultDecoder{},
 	}
 
 	tr := p2p.NewTCPTransport(tcpOpts)
